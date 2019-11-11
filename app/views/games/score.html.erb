@@ -1,0 +1,13 @@
+<h1>Your score</h1>
+
+<div>
+  <% if (@word_exists && @valid) %>
+    <%= "Congratulations, '#{@word}' is a correct English word, you scored #{@score}! 🎉🎉" %>
+  <% elsif @valid %>
+    <%= "Sorry, but '#{@word}' is not a correct English word. 🤓📚" %>
+  <% else %>
+    <%= "Sorry but '#{@word}' cannot be made from [#{@grid}]. 🎯" %>
+  <% end %>
+</div>
+
+<%= link_to "Play another time", new_path, class: "btn btn-primary" %>
